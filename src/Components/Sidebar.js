@@ -6,7 +6,7 @@ import DowlandApp from "./Sidebar/DowlandApp"
 
 const Sidebar = () => {
   return (
-    <aside className='w-60 pt-6 flex flex-col bg-black'>
+    <aside className='w-60 pt-6 flex flex-col flex-shrink-0  bg-black'>
       <a className="mb-7 px-6" href="/">
         <img className="h-10" src={logo} alt="" />
       </a>

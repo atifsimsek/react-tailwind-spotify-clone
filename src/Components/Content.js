@@ -6,7 +6,9 @@ const Content = () => {
   return (
     <main className="flex-auto">
       <Navbar />
-      {useRoutes(routes)}
+      <div className="px-8 pt-5">
+        {useRoutes(routes)}
+      </div>
     </main>
   )
 }

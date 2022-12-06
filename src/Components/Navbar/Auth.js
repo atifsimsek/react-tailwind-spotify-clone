@@ -10,7 +10,7 @@ const Auth = () => {
     }
 
     return (
-        <Menu as="nav" className={"relative"}>
+        <Menu as="nav" className={"relative z-50"}>
             {({ open }) => (
                 <>
                     <Menu.Button className={`flex items-center h-8 rounded-3xl pr-2 ${open ? "bg-active" : "bg-black"} hover:bg-active`}>
@@ -20,14 +20,35 @@ const Auth = () => {
                             <Icon size={16} name="down" />
                         </span>
                     </Menu.Button>
-                    <Menu.Items className={"absolute top-full right-0 w-48 bg-active rounded translate-y-2"}>
+                    <Menu.Items className={"absolute p-1 top-full right-0 w-48 bg-active rounded translate-y-2"}>
                         <Menu.Item>
                             {({ active }) => (
                                 <a
-                                    className={`${active && 'bg-blue-500'}`}
+                                    className={` h-10 flex items-center justify-between px-2 text-sm rounded  ${active && 'bg-white bg-opacity-20'}`}
                                     href="/account-settings"
                                 >
-                                    Account settings
+                                    Account
+                                    <Icon name="external" size={16}/>
+                                </a>
+                            )}
+                        </Menu.Item>
+                        <Menu.Item>
+                            {({ active }) => (
+                                <a
+                                    className={` h-10 flex items-center px-2 text-sm rounded  ${active && 'bg-white bg-opacity-20'}`}
+                                    href="/account-settings"
+                                >
+                                    Profile
+                                </a>
+                            )}
+                        </Menu.Item>
+                        <Menu.Item>
+                            {({ active }) => (
+                                <a
+                                    className={` h-10 flex items-center px-2 text-sm rounded  ${active && 'bg-white bg-opacity-20'}`}
+                                    href="/account-settings"
+                                >
+                                    Log Out
                                 </a>
                             )}
                         </Menu.Item>
