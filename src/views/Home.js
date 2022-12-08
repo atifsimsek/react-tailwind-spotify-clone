@@ -5,51 +5,71 @@ const Home = () => {
   const items = [
     {
       id: 1,
-      title: "Daily Mix 1",
-      description: "Emir Can İğrek, Derya Uluğ, Gripin ve daha fazlası",
-      image: "https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb5a34cfd04da2dd2dc878153d/1/tr/default",
-      type:"album"
+      title: "Abbey Road",
+      description: "The Beatles",
+      image: "https://i.scdn.co/image/ab67616d00001e02dc30583ba717007b00cceb25",
+      type: "album",
+      artist:"Artist 1",
+      src: 'https://freesound.org/data/previews/612/612095_5674468-lq.mp3'
     },
     {
       id: 2,
-      title: "Daily Mix 2",
-      description: "Eminem, Lil Wayne, Logic ve daha fazlası",
-      image: "https://dailymix-images.scdn.co/v2/img/ab6761610000e5eba00b11c129b27a88fc72f36b/2/tr/default",
-      type:"album"
+      title: "Evolve",
+      description: "İmagine Dragons",
+      image: "https://i.scdn.co/image/ab67616d00001e025675e83f707f1d7271e5cf8a",
+      type: "album",
+      artist:"Artist 2",
+      src: 'https://freesound.org/data/previews/612/612092_7037-lq.mp3'
     },
     {
       id: 3,
-      title: "Daily Mix 3",
-      description: "Metallica, Ghost, Pink Floyd ve daha fazlası",
-      image: "https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb69ca98dd3083f1082d740e44/3/tr/default",
-      type:"artist"
+      title: "Artist",
+      description: "Pink Floyd, Metallica, Ghost ve daha fazlası",
+      image: "https://i.scdn.co/image/d011c95081cd9a329e506abd7ded47535d524a07",
+      type: "artist",
+      artist:"Artist 3",
+      src: 'https://freesound.org/data/previews/612/612087_1648170-lq.mp3'
     },
     {
       id: 4,
-      title: "Daily Mix 4",
+      title: "PodCast",
       description: "Imagine Dragons, Coldplay, The Score ve daha fazlası",
-      image: "https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb920dc1f617550de8388f368e/4/tr/default",
-      type:"podcast"
+      image: "https://i.scdn.co/image/ab67656300005f1fa5dee41b5350c78b3887f56f",
+      type: "podcast",
+      artist:"Artist 4",
+      src: 'https://freesound.org/data/previews/612/612085_28867-lq.mp3'
     },
     {
       id: 5,
-      title: "Daily Mix 5",
-      description: "Sagopa Kajmer, Norm Ender, Patron ve daha fazlası",
-      image: "https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb6eb76d24f4d5055fbf2642c3/5/tr/default",
-      type:"album"
+      title: "Album",
+      description: "The Score",
+      image: "https://i.scdn.co/image/ab67616d00001e0284f08a509689b140f1bf931d",
+      type: "album",
+      artist:"Artist 5",
+      src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
     },
 
   ]
 
   return (
-    <div>
+    <div className="grid gap-y-8">
       <Section
         title="Recently played"
         more="/123"
         items={items}
-      >
+      />
+      <Section
+        title="Shows to try"
+        more="/123"
+        items={items}
+      />
+      <Section
+        title="Made from Atıf Şimşek"
+        more="/123"
+        items={items}
+      />
 
-      </Section >
+
     </div>
   )
 }
