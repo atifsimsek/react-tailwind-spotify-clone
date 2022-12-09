@@ -6,7 +6,9 @@ import { setCurrent } from "stores.js/player"
 const SongItem = ({ item }) => {
 
     const dispatch = useDispatch()
-    const { current, playing } = useSelector(state => state.player)
+    const { current, playing, controls } = useSelector(state => state.player)
+
+    console.log(controls)
 
     const isCurrentItem = (current?.id === item.id && playing)
 
@@ -29,6 +31,12 @@ const SongItem = ({ item }) => {
 
     const updateCurrent = () => {
         dispatch(setCurrent(item))
+        if (playing) {
+            controls.pause()
+        }
+        else{
+            controls.play()
+        }
     }
 
     return (
@@ -41,7 +49,7 @@ const SongItem = ({ item }) => {
                 <img src={item.image} className={`absolute inset-0 object-cover w-full h-full ${imageStyle(item)} `} alt="" />
                 <button
                     onClick={updateCurrent}
-                    className={`w-10 h-10  rounded-full bg-primary absolute bottom-2 right-2 hidden items-center justify-center group-hover:flex group-focus:flex ${!isCurrentItem ? "hidden" : "flex"} `}>
+                    className={`w-10 h-10  rounded-full bg-primary absolute bottom-2 right-2 hidden items-center justify-center group-hover:flex group-focus:flex ${!isCurrentItem ? "hidden" : "!flex"} `}>
                     <Icon name={isCurrentItem ? "pause" : "play"} size={16} />
                 </button>
             </div>

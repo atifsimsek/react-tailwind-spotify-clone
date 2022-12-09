@@ -80,7 +80,7 @@ const Player = () => {
                 )
                 }
             </div>
-            <div className='flex flex-col items-center max-w-[45.125rem] px-4 w-[40%]'>
+            <div className='flex flex-col items-center max-w-[45.125rem] pt-2 px-4 w-[40%]'>
                 <div className='flex items-center gap-x-2'>
                     <button className='w-8 h-8 flex items-center justify-center text-white text-opacity-70 hover:text-opacity-100 '>
                         <Icon name="shuffle" size={16} />
@@ -98,7 +98,7 @@ const Player = () => {
                         <Icon name="repeat" size={16} />
                     </button>
                 </div>
-                <div className="w-full flex items-center gap-x-2">
+                <div className="w-full flex items-center gap-x-2 mt-1.5">
                     {audio}
                     <div className="text-[0.688rem] text-white opacity-70">
                         {secondsToTime(state?.time)}
