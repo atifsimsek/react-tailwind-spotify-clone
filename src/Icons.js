@@ -230,6 +230,27 @@ const UpArrow = ({ size }) => {
     )
 }
 
+const FullScreenIcon = ({size}) => {
+	return (
+		<svg viewBox="0 0 16 16" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M6.064 10.229l-2.418 2.418L2 11v4h4l-1.647-1.646 2.418-2.418-.707-.707zM11 2l1.647 1.647-2.418 2.418.707.707 2.418-2.418L15 6V2h-4z"
+				fill="currentColor"/>
+		</svg>
+	)
+}
+
+const FullScreenOffIcon = ({size}) => {
+	return (
+		<svg viewBox="0 0 24 24" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M22.125 2.582l-.707-.707-4.273 4.273L15 4.001v5h5l-2.146-2.146 4.271-4.273zM6.147 17.146l-4.273 4.272.707.707 4.273-4.272L9 19.999v-5H4l2.147 2.147z"
+				fill="currentColor"/>
+		</svg>
+	)
+}
+
+
 
 
 
@@ -260,7 +281,9 @@ export const Icon = ({ name, size = 24 }) => {
         volumeLow: VolumeLowIcon,
         volumeNormal: VolumeNormalIcon,
         volumeFull: VolumeFullIcon,
-        up: UpArrow
+        up: UpArrow,
+        fullScreen :FullScreenIcon,
+        fullScreenOff: FullScreenOffIcon
     }
 
     const Component = icons[name]

@@ -1,14 +1,21 @@
 import { Icon } from "Icons"
-import { useAudio } from 'react-use';
+import { useAudio, useFullscreen, useToggle } from 'react-use';
 import { secondsToTime } from "utils";
 import CustomRange from "Components/CustomRange";
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { setControls, setPlaying, setSidebar } from "stores.js/player";
+import FullScreenPlayer from "Components/FullScreenPlayer";
+
 
 
 const Player = () => {
+
+    const fsRef = useRef();
+    const [show, toggle] = useToggle(false);
+    const isFullScreen = useFullscreen(fsRef, show, { onClose: () => toggle(false) })
+
     const { current, sidebar } = useSelector(state => state.player)
     const dispatch = useDispatch()
 
@@ -29,7 +36,7 @@ const Player = () => {
         dispatch(setPlaying(state.playing))
     }, [state.playing])
 
-    
+
 
     const volumeIcon = useMemo(() => {
         if (state.volume === 0 || state.muted) {
@@ -142,6 +149,23 @@ const Player = () => {
                         }}
                     />
                 </div>
+                <button
+                    onClick={toggle}
+                    className='w-8 h-8 flex items-center justify-center text-white text-opacity-70 hover:text-opacity-100 '>
+                    <Icon name="fullScreen" size={16} />
+                </button>
+            </div>
+            <div ref={fsRef}>
+                {
+                    isFullScreen &&
+                    <FullScreenPlayer
+                        toggle={toggle}
+                        state={state}
+                        controls={controls}
+                        volumeIcon={volumeIcon}
+
+                    />
+                }
             </div>
         </div>
     )
