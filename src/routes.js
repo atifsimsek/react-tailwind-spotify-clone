@@ -5,7 +5,7 @@ const routes = [
 
     {
         name: "home",
-        path: "/",
+        path: "/react-tailwind-spotify-clone",
         element: <Home />,
     },
 
