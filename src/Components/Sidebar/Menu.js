@@ -8,7 +8,7 @@ const Menu = () => {
         <nav className='px-2 '>
             <ul className='flex flex-col'>
                 <li>
-                    <NavLink to="/react-tailwind-spotify-clone" className='h-10 flex gap-x-4 items-center text-sm font-semibold text-link hover:text-white px-4 rounded' end>
+                    <NavLink to="/react-tailwind-spotify-clone/" className='h-10 flex gap-x-4 items-center text-sm font-semibold text-link hover:text-white px-4 rounded' end>
                         <span>
 
                             <Icon name="home" />

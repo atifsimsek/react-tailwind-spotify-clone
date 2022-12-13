@@ -5,18 +5,18 @@ const routes = [
 
     {
         name: "home",
-        path: "/react-tailwind-spotify-clone",
+        path: "/react-tailwind-spotify-clone/",
         element: <Home />,
     },
 
     {
         name: "search",
-        path: "/search",
+        path: "/react-tailwind-spotify-clone/search",
         element: <Search />,
     },
     {
         name: "search",
-        path: "/collection",
+        path: "/react-tailwind-spotify-clone/collection",
         element: <Collection />,
     },
 
