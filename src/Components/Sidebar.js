@@ -5,6 +5,7 @@ import { Icon } from "Icons"
 import DowlandApp from "./Sidebar/DowlandApp"
 import { useSelector } from "react-redux"
 import SidebarCover from "./Sidebar/SidebarCover"
+import { NavLink } from "react-router-dom"
 
 const Sidebar = () => {
 
@@ -13,9 +14,9 @@ const Sidebar = () => {
 
   return (
     <aside className='w-60 pt-6 flex flex-col flex-shrink-0  bg-black'>
-      <a className="mb-7 px-6" href="/">
+      <NavLink to="/react-tailwind-spotify-clone/"  className="mb-7 px-6 !bg-black" href="/">
         <img className="h-10" src={logo} alt="" />
-      </a>
+      </NavLink>
 
       <Menu />
 
